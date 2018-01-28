@@ -1,0 +1,10 @@
+[Unit]
+Description=FlappyCoin persistent wallet daemon for flappycoin-game-server
+
+[Service]
+ExecStart=/bin/sh -ec 'sudo -H -u ubuntu ~ubuntu/Flaps/src/flappycoind'
+Type=forking
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

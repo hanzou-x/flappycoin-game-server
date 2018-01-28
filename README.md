@@ -1,5 +1,5 @@
 This works as a standalone node server. It runs node and the
-wallet as an unprivileged user, so it opens up port 8080 then you can
+wallet as an unprivileged user, so it listens on port 8080 then you can
 forward port 80 traffic there.
 
 Get all three necessary git repositories side-by-side:
@@ -19,7 +19,7 @@ If not sure how to do this without the Qt GUI, here's a hint:
     # ...
     ./flappycoind getbalance
 
-Set up and test out out the node server by itself:
+Set up and test out the node server by itself:
 
     sudo apt install nodejs
     cd flappycoin-game-server
@@ -45,3 +45,18 @@ way to do it with systemd on Ubuntu:
     sudo vi /lib/systemd/system/flappycoin-game.service # inspect and edit the userid if necessary
     sudo systemctl enable flappycoin-game
     sudo systemctl start flappycoin-game
+
+This needs to be done for the wallet too. If the wallet is already
+running terminate it with `killall flappycoind`, then:
+
+    sudo cp flappycoind.service /lib/systemd/system/
+    sudo vi /lib/systemd/system/flappycoind.service # inspect and edit the userid if necessary
+    sudo systemctl enable flappycoind
+    sudo systemctl start flappycoind
+
+The included sample files assume the default username "ubuntu", so
+be sure to change that unless your setup is equally lazy.
+
+Once running, keep an eye on usage and inspect the logs via:
+
+    systemctl status flappycoin-game
