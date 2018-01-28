@@ -29,7 +29,7 @@ Set up and test out the node server by itself:
 Then connect to port 8080 on your host and see if gameplay and
 payouts are working as expected. Press Ctrl+C to terminate.
 
-To set up port forwarding from port 80:
+To initiate port forwarding from port 80:
 
     sudo iptables -A INPUT -i eth0 -p tcp --dport 80 -j ACCEPT
     sudo iptables -A INPUT -i eth0 -p tcp --dport 8080 -j ACCEPT
@@ -59,4 +59,4 @@ be sure to change that unless your setup is equally lazy.
 
 Once running, keep an eye on usage and inspect the logs via:
 
-    systemctl status flappycoin-game
+    journalctl -u flappycoin-game
