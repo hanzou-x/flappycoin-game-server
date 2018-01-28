@@ -1,0 +1,9 @@
+[Unit]
+Description=FlappyCoin node server
+
+[Service]
+ExecStart=/bin/sh -ec 'cd /home/ubuntu/flappycoin-game-server && sudo -H -u ubuntu node server.js'
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
