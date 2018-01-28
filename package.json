@@ -19,6 +19,7 @@
   "homepage": "https://github.com/hanzou-x/flappycoin-game-server#readme",
   "dependencies": {
     "body-parser": "^1.18.2",
-    "express": "^4.16.2"
+    "express": "^4.16.2",
+    "log-timestamp": "^0.1.2"
   }
 }

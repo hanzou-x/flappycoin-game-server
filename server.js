@@ -1,11 +1,12 @@
 var express = require('express');
 var bodyParser = require('body-parser');
+require('log-timestamp');
 
 var app = express();
 
 app.use('/send', bodyParser.json());
 app.post('/send', function(req, res){
-    console.log(Date.now() + ': POST on /send from ' + req.connection.remoteAddress);
+    console.log('POST on /send from ' + req.connection.remoteAddress);
     var process = require('child_process');
     var score = req.body.score;
     var address = req.body.address;
