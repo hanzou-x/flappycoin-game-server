@@ -3,7 +3,8 @@ var bodyParser = require('body-parser');
 
 var app = express();
 
-app.post('/', function(req, res){
+app.use('/send', bodyParser.json());
+app.post('/send', function(req, res){
     console.log('GET /')
     var process = require('child_process');
     var score = req.body.score;
@@ -24,8 +25,6 @@ app.post('/', function(req, res){
 });
 
 app.use('/', express.static('../flappycoin-game'));
-
-app.use(bodyParser.json());
 
 var port = 8080;
 app.listen(port);
