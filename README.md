@@ -15,7 +15,7 @@ If not sure how to do this without the Qt GUI, here's a hint:
 
     cd ~/Flaps/src
     ./flappycoind
-    ./flappycoind getaccountaddress
+    ./flappycoind getaccountaddress 0
     # ...
     ./flappycoind getbalance
 
