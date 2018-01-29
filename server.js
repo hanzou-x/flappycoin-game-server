@@ -30,7 +30,7 @@ app.post('/send', function(req, res){
                 res.end(stdout.trim());
             } else {
                 res.writeHead(403, {'Content-Type': 'text/plain'});
-                res.end(stdout);
+                res.end(stdout.trim());
             }
         }
     });

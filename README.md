@@ -6,7 +6,7 @@ Get all three necessary git repositories side-by-side:
 
     git clone https://github.com/hanzou-x/flappycoin-game.git
     git clone https://github.com/hanzou-x/flappycoin-game-server.git
-    git clone https://github.com/hanzou-x/Flaps
+    git clone https://github.com/hanzou-x/Flaps.git
 
 Set up your local wallet. If you build flappycoind from source it
 will land in `~/Flaps/src/flappycoind` or you can copy a pre-built
