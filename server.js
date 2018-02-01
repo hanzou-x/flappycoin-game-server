@@ -14,7 +14,7 @@ app.post('/send', function(req, res) {
     var score = req.body.score;
     var address = req.body.address;
     var payout = 10 + 2 * (score - 10);
-    var max_per_hour = 250; // more like hourly threshold, could technically get 349 in an hour
+    var max_per_hour = 150; // more like hourly threshold, could technically get 249 in an hour
     var accumulated_hour = 0;
 
     if (recent_wins[ip] === undefined) {
@@ -38,13 +38,13 @@ app.post('/send', function(req, res) {
     if (payout != req.body.payout) {
         console.log('mismatching POST payout = ' + req.body.payout + ', aborting');
         res.writeHead(403, {'Content-Type': 'text/plain'});
-        res.end('error: unexpected input');
+        res.end('error: unexpected input' + '\nAre you a hacker?\nMessage us on Discord and join the Flappy dev team');
         return;
     }
     if (accumulated_hour > max_per_hour) {
         console.log('denying payout to a Flappy addict');
         res.writeHead(202, {'Content-Type': 'text/plain'});
-        res.end("Huge prize money on this IP already.\nCheck back later!");
+        res.end('Huge prize money on this IP already.\nCheck back later!');
         return;
     }
     recent_wins[ip].push([Date.now(), payout]);
