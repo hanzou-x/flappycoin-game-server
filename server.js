@@ -14,7 +14,7 @@ app.post('/send', function(req, res) {
     var score = req.body.score;
     var address = req.body.address;
     var payout = 10 + 2 * (score - 10);
-    var max_per_hour = 500; // more like hourly threshold, could technically get 599 in an hour
+    var max_per_hour = 250; // more like hourly threshold, could technically get 349 in an hour
     var accumulated_hour = 0;
 
     if (recent_wins[ip] === undefined) {
