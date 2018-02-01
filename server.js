@@ -21,10 +21,10 @@ app.post('/send', function(req, res) {
         recent_wins[ip] = [];
     } else {
         // remove any records older than one hour
-        while (recent_wins[ip].Length > 0 && Date.now() - recent_wins[ip][0][0] > 3600 * 1000) {
+        while (recent_wins[ip].length > 0 && Date.now() - recent_wins[ip][0][0] > 3600 * 1000) {
             recent_wins[ip].shift();
         }
-        for (var i = 0; i < recent_wins[ip].Length; i++) {
+        for (var i = 0; i < recent_wins[ip].length; i++) {
             accumulated_hour += recent_wins[ip][i][1];
         }
     }
