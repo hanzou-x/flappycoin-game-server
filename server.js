@@ -43,7 +43,7 @@ app.post('/send', function(req, res) {
     }
     if (accumulated_hour > max_per_hour) {
         console.log('denying payout to a Flappy addict');
-        res.writeHead(200, {'Content-Type': 'text/plain'});
+        res.writeHead(202, {'Content-Type': 'text/plain'});
         res.end("Huge prize money on this IP already.\nCheck back later!");
         return;
     }
